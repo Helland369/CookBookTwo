@@ -2,6 +2,8 @@ namespace cookbookTwo;
 
 public class InOutPut
 {
+    private int i = 1;
+    
     private Recipe selectedRecipe;
 
     private List<Recipe> _recipes = new List<Recipe>
@@ -90,6 +92,7 @@ public class InOutPut
 
     private void ReadSelectedRecipe(int input)
     {
+        
         if (input >= 0 && input <= _recipes.Count)
         {
             selectedRecipe = _recipes[input - 1];
@@ -98,9 +101,11 @@ public class InOutPut
                               $"Name: {selectedRecipe.NameOfRecipe}");
             foreach (var ingredient in selectedRecipe.Ingredients)
             {
-                Console.WriteLine($"Ingredient: {ingredient}");
+                Console.WriteLine($"Ingredient{i}: {ingredient}");
+                i++;
             }
         }
+        i = 1;
     }
 
     private void EditTextScreen()
@@ -124,6 +129,17 @@ public class InOutPut
         EditRecipe(selectedRecipe,inputText,newText);
     }
 
+    private void EditRecipeList(string input, Recipe selectedRecipe)
+    {
+        int inputInt = Convert.ToInt32(input);
+        
+        Console.WriteLine("Write the new text");
+        
+        string newText = Console.ReadLine();
+
+        selectedRecipe.Ingredients[inputInt - 1] = newText;
+    }
+    
     private void EditRecipe(Recipe selectedRecipe, string inputText, string newText)
     {
         if (String.Equals(inputText, "Name", StringComparison.CurrentCultureIgnoreCase))
@@ -137,7 +153,11 @@ public class InOutPut
         else if (String.Equals(inputText, "Description", StringComparison.CurrentCultureIgnoreCase))
         {
             selectedRecipe.Description = newText;
-        } 
+        }
+        else
+        {
+            EditRecipeList(inputText, selectedRecipe);
+        }
     }
 
     private void MainMenu()
