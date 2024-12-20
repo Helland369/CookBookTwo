@@ -116,24 +116,28 @@ public class InOutPut
         Console.WriteLine("Select the item you want to edit");
 
         string inputText = Console.ReadLine();
-
-        EditRecipe(selectedRecipe,inputText);
+        
+        Console.WriteLine($"Write the text you want to change for {inputText}");
+        
+        string newText = Console.ReadLine();
+        
+        EditRecipe(selectedRecipe,inputText,newText);
     }
-    
-    private void EditRecipe(Recipe selectedRecipe,string inputText)
+
+    private void EditRecipe(Recipe selectedRecipe, string inputText, string newText)
     {
         if (String.Equals(inputText, "Name", StringComparison.CurrentCultureIgnoreCase))
         {
-            selectedRecipe.NameOfRecipe = inputText;
+            selectedRecipe.NameOfRecipe = newText;
         }
         else if (String.Equals(inputText, "Category", StringComparison.CurrentCultureIgnoreCase))
         {
-            selectedRecipe.Category = inputText;
+            selectedRecipe.Category = newText;
         }
         else if (String.Equals(inputText, "Description", StringComparison.CurrentCultureIgnoreCase))
         {
-            selectedRecipe.Description = inputText;
-        }
+            selectedRecipe.Description = newText;
+        } 
     }
 
     private void MainMenu()
