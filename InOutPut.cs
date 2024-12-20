@@ -66,7 +66,7 @@ public class InOutPut
             }
         }
     }
-
+  
     private void PrintListWithIndex()
     {
         for (int i = 0; i < _recipes.Count; i++)
@@ -138,10 +138,43 @@ public class InOutPut
 
     private void MainMenu()
     {
-        //PrintRecipieList();
-        //FilterBasedOnCategory();
-        //FilterBasedOnIngredients();
-        //ReadSelectedRecipe(SelectedRecipe());
-        EditTextScreen();
+        bool loopCondition = true;
+        int chioce;
+        
+        while (loopCondition)
+        {
+            Console.WriteLine("[1] Print Recipe List\n" +
+                              "[2] Filter based on category\n" +
+                              "[3] Filter based on ingredients\n" +
+                              "[4] Reed a specific recipe\n" +
+                              "[5] Edit text\n" +
+                              "[0] EXIT\n");
+           chioce = Convert.ToInt32(Console.ReadLine());
+
+           switch (chioce)
+           {
+               case 0:
+                   loopCondition = false;
+                   return;
+               case 1:
+                   PrintRecipieList();
+                   break;
+               case 2:
+                   FilterBasedOnCategory();
+                   break;
+               case 3:
+                   FilterBasedOnIngredients();
+                   break;
+               case 4:
+                   ReadSelectedRecipe(SelectedRecipe());
+                   break;
+               case 5:
+                   EditTextScreen();
+                   break;
+               default:
+                   Console.WriteLine("Invalid choice, please try again");
+                   break;
+           }
+        }
     }
 }
