@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "r+I2RR35qKU=",
+  "dgSpecHash": "vE5PZ+uqk8U=",
   "success": true,
   "projectFilePath": "/home/th/code/csharp/cookbookTwo/cookbookTwo/cookbookTwo.csproj",
   "expectedPackageFiles": [
-    "/home/th/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.10/microsoft.aspnetcore.app.ref.8.0.10.nupkg.sha512"
+    "/home/th/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.11/microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512"
   ],
   "logs": []
 }

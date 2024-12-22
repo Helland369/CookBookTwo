@@ -129,13 +129,9 @@ public class InOutPut
         EditRecipe(selectedRecipe,inputText,newText);
     }
 
-    private void EditRecipeList(string input, Recipe selectedRecipe)
+    private void EditRecipeList(string input, Recipe selectedRecipe, string newText)
     {
         int inputInt = Convert.ToInt32(input);
-        
-        Console.WriteLine("Write the new text");
-        
-        string newText = Console.ReadLine();
 
         selectedRecipe.Ingredients[inputInt - 1] = newText;
     }
@@ -156,7 +152,7 @@ public class InOutPut
         }
         else
         {
-            EditRecipeList(inputText, selectedRecipe);
+            EditRecipeList(inputText, selectedRecipe, newText);
         }
     }
 
